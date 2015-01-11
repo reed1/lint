@@ -747,7 +747,7 @@ func (f *file) lintTypeDoc(t *ast.TypeSpec, doc *ast.CommentGroup) {
 	for _, a := range articles {
 		if strings.HasPrefix(s, a+" ") {
 			s = s[len(a)+1:]
-			break
+			breakli
 		}
 	}
 	if !strings.HasPrefix(s, t.Name.Name+" ") {
@@ -767,6 +767,8 @@ var commonMethods = map[string]bool{
 // It complains if they are missing, or not of the right form.
 // It has specific exclusions for well-known methods (see commonMethods above).
 func (f *file) lintFuncDoc(fn *ast.FuncDecl) {
+	// ignore this examination
+	return
 	if !ast.IsExported(fn.Name.Name) {
 		// func is unexported
 		return
