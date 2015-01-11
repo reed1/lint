@@ -832,7 +832,8 @@ func (f *file) lintValueSpecDoc(vs *ast.ValueSpec, gd *ast.GenDecl, genDeclMissi
 		return
 	}
 
-	if vs.Doc == nil {
+	// skip doc check
+	if false && vs.Doc == nil {
 		if gd.Doc == nil && !genDeclMissingComments[gd] {
 			block := ""
 			if kind == "const" && gd.Lparen.IsValid() {
