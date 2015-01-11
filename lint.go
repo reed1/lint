@@ -734,6 +734,8 @@ var commonInitialisms = map[string]bool{
 // It complains if they are missing from an exported type,
 // or if they are not of the standard form.
 func (f *file) lintTypeDoc(t *ast.TypeSpec, doc *ast.CommentGroup) {
+	// ignore this examination
+	return
 	if !ast.IsExported(t.Name.Name) {
 		return
 	}
