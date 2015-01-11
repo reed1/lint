@@ -747,7 +747,7 @@ func (f *file) lintTypeDoc(t *ast.TypeSpec, doc *ast.CommentGroup) {
 	for _, a := range articles {
 		if strings.HasPrefix(s, a+" ") {
 			s = s[len(a)+1:]
-			breakli
+			break
 		}
 	}
 	if !strings.HasPrefix(s, t.Name.Name+" ") {
