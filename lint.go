@@ -623,6 +623,8 @@ func (f *file) lintNames() {
 
 // lintName returns a different name if it should be different.
 func lintName(name string) (should string) {
+	// Ignore this lint
+	return name
 	// Fast path for simple cases: "_" and all lowercase.
 	if name == "_" {
 		return name
